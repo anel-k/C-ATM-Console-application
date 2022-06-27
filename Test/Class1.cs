@@ -9,16 +9,16 @@ namespace ATMSystem
     class ATM
     {
 
-        public int depositAmount = 0;                                                             //int - cijela vrijednost  depositAmount
-        public int withdrawAmount = 0;                                                            //int - cijela vrijednost withdrawamounta
-        public int option;                                                                        //int - vrijednost izbora iz "Menu-a"
-        List<User> Users = new List<User>();                                                      //Deklarisanje nove liste User-a 
+        public int depositAmount = 0;                                                             
+        public int withdrawAmount = 0;                                                            
+        public int option;                                                                        
+        List<User> Users = new List<User>();                                                       
         public void Init()
         {
-            User anel = new("Anel", "1234", 5000);
-            User kuna = new("Kuna", "1111", 8000);
-            User sila = new("Sila", "5555", 7777);
-            User sela = new("Sela", "3333", 3000);
+            User anel = new("Anel", "1234", 5000);   //change user name and values
+            User kuna = new("Kuna", "1111", 8000);   //change user name and values
+            User sila = new("Sila", "5555", 7777);   //change user name and values
+            User sela = new("Sela", "3333", 3000);   //change user name and values
             Users.Add(anel);
             Users.Add(kuna);
             Users.Add(sila);
@@ -28,7 +28,7 @@ namespace ATMSystem
         {
             User? loggedInUser = null;
             Console.Write("Enter Your ATM Pin: ");
-            String ATMPIN = Console.ReadLine();                                                // deklarisanje unesenog pina kao string "ATMPIN"
+            String ATMPIN = Console.ReadLine();                                                
             Console.Write("Enter Your Name :");
             String USERNAME = Console.ReadLine();
             loggedInUser = Users.Find(user => user.pin == ATMPIN && user.name == USERNAME);
@@ -53,7 +53,7 @@ namespace ATMSystem
                         Execute();
                     }
                     //option = int.Parse(Console.ReadLine());
-                    switch (option)                                                                 //Moze se koristiti kao zamjena za if, else if, else gdje ostavljamo caseove
+                    switch (option)                                                                 
                     {
                         case 1:
                             CashWithdrawal();
@@ -109,13 +109,13 @@ namespace ATMSystem
     }
 }
 
-public class User                                                                  // definisana class-a User
+public class User                                                                  
 {
     public string name { get; set; }
     public string pin { get; set; }
     public int balance { get; set; }
 
-    public User(String name, String pin, int balance)                       // konstruktor class-e User
+    public User(String name, String pin, int balance)                       
     {
         this.name = name;
         this.pin = pin;
